@@ -24,6 +24,7 @@ The sections below explain additional details on the data, techniques, and files
 - [Step 4: Order & Item Analysis](#step-4-order--item-analysis)
 - [Bonus Queries](#bonus-queries)
 - [Key Insights](#key-insights)
+- [Recommendations](#recommendations)
 - [Project Structure](#project-structure)
 - [How to Run](#how-to-run)
 - [What I Learned](#what-i-learned)
@@ -265,6 +266,18 @@ ORDER BY pct_of_total_revenue DESC;
 - **23 orders** contained more than 12 items — the largest orders (5 orders tied at 14 items each) all spent well over $150, roughly 5x the average order value.
 - Revenue is fairly stable month to month (~$50.8K–$54.6K across January, February, and March), with no single month dramatically outperforming the others.
 - **137 order-line records have a missing (`NULL`) item ID** — worth flagging as a data-quality issue if this dataset is used for further modeling.
+
+## Recommendations
+
+Based on the patterns surfaced above, a few actions stand out:
+
+- **Lean into Italian and Asian dishes.** These two categories drive ~60% of total revenue between them. Featuring them in promotions, seasonal specials, or a "chef's picks" section could reinforce an already-strong performer rather than spreading marketing spend evenly across all four categories.
+- **Investigate why Chicken Tacos underperforms.** At 123 orders, it trails every other item by a wide margin (the next-lowest, Potstickers, has 205). Worth checking price point, menu placement, or simply testing a recipe refresh before considering removing it.
+- **Staff for the lunch and dinner peaks.** Noon and 5–7pm are clearly the busiest windows. If staffing isn't already weighted toward these hours, aligning shift schedules with the data could reduce wait times during rushes and cut idle labor cost during the slower mid-afternoon window.
+- **Use Monday's strength, and address Wednesday's dip.** Monday outperforms every other day; a Wednesday-specific promotion (e.g. a discount or limited-time item) could help smooth weekly demand and revenue rather than leaving Wednesday as a consistently quiet day.
+- **Create a bundle around large orders.** The biggest orders (14+ items) already spend ~5x the average — a "family meal" or catering bundle aimed at this segment could make it easier for them to order (and easier to upsell add-ons) rather than leaving it to ad hoc ordering.
+- **Fix the data-quality gap before deeper analysis.** 137 order-line records have a missing item ID. Before this dataset is used for forecasting or inventory planning, it's worth tracing whether these are truly unrecorded items, voided orders, or a POS logging issue — the answer changes how they should be handled (excluded vs. imputed).
+- **Revisit pricing on low-margin, high-volume items.** French Fries and Mac & Cheese are among the cheapest items on the menu ($7) but still sell steadily — a small price adjustment on high-frequency, low-price items could lift revenue with minimal impact on order volume.
 
 ## Project Structure
 
