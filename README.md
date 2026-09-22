@@ -32,8 +32,6 @@ The sections below explain additional details on the data, techniques, and files
 
 This project uses the **Restaurant Orders** dataset from [Maven Analytics](https://mavenanalytics.io) — a free sample dataset representing a quarter's worth of orders from a fictitious international-cuisine restaurant.
 
-<img src="./assets/maven_dataset_card.png" alt="Maven Analytics Restaurant Orders dataset card" width="380">
-
 - **Records:** 12,266 across 2 tables
 - **Fields:** 8
 - **Time period:** January 1 – March 31, 2023 (Q1)
